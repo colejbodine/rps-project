@@ -70,7 +70,7 @@ function getPlayerSelection() {
     
     //*********************************ADD CODE HERE *************************************/
     // Prompt, Validate and Return the player selection. This must be in the form of "rock", "paper", or "scissors" exactly
-    let playerSelection = prompt('Select "rock", "paper", or "scissors".');
+    let playerSelection = prompt('Select "rock", "paper", or "scissors".').toLowerCase();
 
     switch(playerSelection) {
         case "rock":
@@ -81,6 +81,9 @@ function getPlayerSelection() {
             break;
         case "scissors":
             return Selections.SCISSORS;
+            break;
+        default:
+            return Selections.ROCK;
             break;
     }
 }
