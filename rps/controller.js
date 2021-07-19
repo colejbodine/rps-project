@@ -19,13 +19,14 @@ function playGame() {
 
     //*********************************ADD CODE HERE *************************************/
     // Call playRound() with a parameter of the round count (1 thru numberOfRounds) for each round 
-    for(i = numberOfRounds; i > 0; i++) {
+    for(i = numberOfRounds; i > 0; i--) {
         playRound();
+        console.log("Number of rounds left: ", i - 1);
     }
 
     //*********************************ADD CODE HERE *************************************/
     // Display the Final Score from the properties stored in the Game object
-
+    console.log(`Player wins: ${game.countOfPlayerWins} \nComputer wins: ${game.countOfComputerWins} \nTies: ${game.countOfTies}`);
 }
 
 /**
@@ -35,9 +36,11 @@ function playGame() {
 function playRound(roundNumber) {
     //*********************************ADD CODE HERE *************************************/
     // Display the Current Score to the User
+    console.log(`Player wins: ${game.countOfPlayerWins} \nComputer wins: ${game.countOfComputerWins} \nTies: ${game.countOfTies}`);
     
     //Prompt for Player Selection
-    var playerSelection = getPlayerSelection();
+    playerSelection = getPlayerSelection();
+    console.log(`Player selection: ${playerSelection}`)
     var round = new Round(playerSelection);
 
     //Play the Round
@@ -45,7 +48,16 @@ function playRound(roundNumber) {
 
     //*********************************ADD CODE HERE *************************************/
     // Display the Round Results from the properties stored in the Round object
-
+    if (outcome = Outcomes.PLAYER_WINS) {
+        game.incrementPlayerWins();
+        console.log("You won!");
+    } else if (outcome = Outcomes.COMPUTER_WINS) {
+        game.incrementComputerWins();
+        console.log("Computer won.");
+    } else if (outcome = Outcomes.TIE) {
+        game.incrementCountOfTies;
+        console.log("It's a tie!");
+    }
 }
 
 

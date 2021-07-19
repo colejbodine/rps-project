@@ -20,6 +20,7 @@ class Round{
     constructor(playerSelection){
         this.playerSelection = playerSelection;
         this.computerSelection = this.getComputerSelection();
+        console.log(`Computer selection: ${this.computerSelection}`)
     }
 
     /**
@@ -29,7 +30,7 @@ class Round{
     getComputerSelection() {
         //*********************************ADD CODE HERE *************************************/
         // Use Math.floor and select a random Selections enumerator from above
-        return Selections[Math.floor(Math.random() * Selections.length)]
+        return Selections[Math.floor(Math.random() * 3)]
     }
 
     /**
