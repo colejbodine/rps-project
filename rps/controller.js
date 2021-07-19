@@ -9,13 +9,19 @@ function playGame() {
 
     //*********************************ADD CODE HERE *************************************/
     // Get the number of rounds from the user, and store it in a variable called numberOfRounds.
+    let numberOfRounds = prompt("Pick a number of rounds between 1 and 5.");
     // Use game.IsNumberOfRoundsValid() to validate the user input.
     // If the input is valid, use game.setNumberOfRounds(numberOfRounds) to set the number of rounds for the game 
     //  >> Else, try to get the number of rounds for the suer again
-    
+    if (game.isNumberOfRoundsValid(numberOfRounds)) {
+        game.setNumberOfRounds(numberOfRounds);
+    }
+
     //*********************************ADD CODE HERE *************************************/
     // Call playRound() with a parameter of the round count (1 thru numberOfRounds) for each round 
-
+    for(i = numberOfRounds; i > 0; i++) {
+        playRound();
+    }
 
     //*********************************ADD CODE HERE *************************************/
     // Display the Final Score from the properties stored in the Game object
@@ -52,5 +58,6 @@ function getPlayerSelection() {
     
     //*********************************ADD CODE HERE *************************************/
     // Prompt, Validate and Return the player selection. This must be in the form of "rock", "paper", or "scissors" exactly
+    playerSelection = prompt('Select "rock", "paper", or "scissors".');
 }
 

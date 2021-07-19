@@ -29,7 +29,7 @@ class Round{
     getComputerSelection() {
         //*********************************ADD CODE HERE *************************************/
         // Use Math.floor and select a random Selections enumerator from above
-        return Math.floor(Math.random() * Enum.GetNames(typeof(Selections)).Length);
+        return Math.floor(Math.random() * 3);
     }
 
     /**
