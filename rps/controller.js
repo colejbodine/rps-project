@@ -48,13 +48,13 @@ function playRound(roundNumber) {
 
     //*********************************ADD CODE HERE *************************************/
     // Display the Round Results from the properties stored in the Round object
-    if (outcome = Outcomes.PLAYER_WINS) {
+    if (outcome == Outcomes.PLAYER_WINS) {
         game.incrementPlayerWins();
         console.log("You won!");
-    } else if (outcome = Outcomes.COMPUTER_WINS) {
+    } else if (outcome == Outcomes.COMPUTER_WINS) {
         game.incrementComputerWins();
         console.log("Computer won.");
-    } else if (outcome = Outcomes.TIE) {
+    } else if (outcome == Outcomes.TIE) {
         game.incrementCountOfTies;
         console.log("It's a tie!");
     }
@@ -70,6 +70,18 @@ function getPlayerSelection() {
     
     //*********************************ADD CODE HERE *************************************/
     // Prompt, Validate and Return the player selection. This must be in the form of "rock", "paper", or "scissors" exactly
-    playerSelection = prompt('Select "rock", "paper", or "scissors".');
+    let playerSelection = prompt('Select "rock", "paper", or "scissors".');
+
+    switch(playerSelection) {
+        case "rock":
+            return Selections.ROCK;
+            break;
+        case "paper":
+            return Selections.PAPER;
+            break;
+        case "scissors":
+            return Selections.SCISSORS;
+            break;
+    }
 }
 

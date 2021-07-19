@@ -30,7 +30,19 @@ class Round{
     getComputerSelection() {
         //*********************************ADD CODE HERE *************************************/
         // Use Math.floor and select a random Selections enumerator from above
-        return Selections[Math.floor(Math.random() * 3)]
+        let randomNum = Math.floor(Math.random() * 3);
+        
+        switch(randomNum) {
+            case 0:
+                return Selections.ROCK;
+                break;
+            case 1:
+                return Selections.PAPER;
+                break;
+            case 2:
+                return Selections.SCISSORS;
+                break;
+        }
     }
 
     /**
@@ -42,23 +54,23 @@ class Round{
     determineWinner() {
         //*********************************ADD CODE HERE *************************************/
         // Use this.playerSelection and this.computerSelection to return the appropriate outcome from the Outcomes enumerator above.
-        if (this.playerSelection === Selections.ROCK && this.computerSelection === Selections.SCISSORS) {
+        if (this.playerSelection == Selections.ROCK && this.computerSelection == Selections.SCISSORS) {
             return Outcomes.PLAYER_WINS;
-        } else if (this.playerSelection === Selections.ROCK && this.computerSelection === Selections.PAPER) {
+        } else if (this.playerSelection == Selections.ROCK && this.computerSelection == Selections.PAPER) {
             return Outcomes.COMPUTER_WINS;
-        } else if (this.playerSelection === Selections.ROCK && this.computerSelection === Selections.ROCK) {
+        } else if (this.playerSelection == Selections.ROCK && this.computerSelection == Selections.ROCK) {
             return Outcomes.TIE;
-        } else if (this.playerSelection === Selections.PAPER && this.computerSelection === Selections.ROCK) {
+        } else if (this.playerSelection == Selections.PAPER && this.computerSelection == Selections.ROCK) {
             return Outcomes.PLAYER_WINS;
-        } else if (this.playerSelection === Selections.PAPER && this.computerSelection === Selections.SCISSORS) {
+        } else if (this.playerSelection == Selections.PAPER && this.computerSelection == Selections.SCISSORS) {
             return Outcomes.COMPUTER_WINS;
-        } else if (this.playerSelection === Selections.PAPER && this.computerSelection === Selections.PAPER) {
+        } else if (this.playerSelection == Selections.PAPER && this.computerSelection == Selections.PAPER) {
             return Outcomes.TIE;
-        } else if (this.playerSelection === Selections.SCISSORS && this.computerSelection === Selections.PAPER) {
+        } else if (this.playerSelection == Selections.SCISSORS && this.computerSelection == Selections.PAPER) {
             return Outcomes.PLAYER_WINS;
-        } else if (this.playerSelection === Selections.SCISSORS && this.computerSelection === Selections.ROCK) {
+        } else if (this.playerSelection == Selections.SCISSORS && this.computerSelection == Selections.ROCK) {
             return Outcomes.COMPUTER_WINS;
-        } else if (this.playerSelection === Selections.SCISSORS && this.computerSelection === Selections.SCISSORS) {
+        } else if (this.playerSelection == Selections.SCISSORS && this.computerSelection == Selections.SCISSORS) {
             return Outcomes.TIE;
         }
     }
