@@ -46,6 +46,11 @@ class Game{
      isNumberOfRoundsValid(num) {
         //*********************************ADD CODE HERE *************************************/
         // return a boolean value that shows if the parameter is a valid user input (A number from 1 - 5)
+        if (num >= 1 && num <= 5) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
 
